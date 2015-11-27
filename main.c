@@ -1,7 +1,15 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <Windows.h>
 
-/*계정의 정보를 저장하는 구조체*/
+const int G_delimeter = 96; // [`] ASCII value
+
+unsigned int G_x_position = 1;
+unsigned int G_y_position = 1;
+
+//계정의 정보를 저장하는 구조체
 typedef struct
 {
 	char id[12];						//계정 id
@@ -11,7 +19,7 @@ typedef struct
 	int serial_number;                  //일련번호
 }UserAccount;
 
-/*환자의 개인정보를 저장하는 구조체*/
+//환자의 개인정보를 저장하는 구조체
 typedef struct
 {
 	char patient_name[12];				//환자이름
@@ -32,7 +40,7 @@ typedef struct
 	int patient_tooth[40];				//치아상태
 }PatientInfo;
 
-/*환자의 진료정보를 저장하는 구조체*/
+//환자의 진료정보를 저장하는 구조체
 typedef struct
 {
 	int checkup_date;		//검진일자
@@ -42,7 +50,7 @@ typedef struct
 	char content[600];		//내용
 }PatientNO;
 
-/*예약을 위한 구조체*/
+//예약을 위한 구조체
 typedef struct
 {
 	int date;						//날자
@@ -50,7 +58,7 @@ typedef struct
 	char is_business_hour[48];		//30분 단위로 하루(24시간)을 나눔
 }Schedule;
 
-/*메세지를 위한 구조체*/
+//메세지를 위한 구조체
 typedef struct
 {
 	int sender_id;			//발신자 id
@@ -59,7 +67,7 @@ typedef struct
 	char content[600];		//내용
 }Message;
 
-/*설문조사를 위한 구조체*/
+//설문조사를 위한 구조체
 typedef struct
 {
 	int checkup_date;		//검진일자
@@ -73,15 +81,9 @@ int accountAccess(char* id, char* pw);
 
 int main()
 {
-	printf("dfskajdfskadf");		
+	//moveCursor();
 	return 0;
 }
-
-
-
-
-
-
 
 
 
